@@ -49,13 +49,16 @@ export const burger = {
   price: 18, 
   category: "Lunch", 
   
-  discount: function(){
-     return 
+  discount: function(string){
+    let price = 0
+     if(string === 'teacher' || string === 'student'){
+       price = 18-(18 * 0.25)
+     }else{
+      price = 18-(18 * 0.1)
+     }
+     return price;
   }
 }
-
-
-
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
     {name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
@@ -81,7 +84,7 @@ Using the reviews array above do the following: (no function needed)
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
-reviews.name = 'Bob'; reviews.ratings = 4.5; reviews.feedback = 'love then food and place';
+reviews.name = 'Bob'; reviews.rating = 4.5; reviews.feedback = 'love then food and place';
 
 console.log(reviews);
 
@@ -109,15 +112,13 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(array, key, string) {
+function getReviewByIndex(array,number){
   for (let i = 0; i < array.length; i++){
-    if(array[i][key] === string){
-
-    }
+    return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`
   }
-  return array;
 }
 
+console.log(getReviewByIndex(reviews,0));
 
   
 
@@ -133,9 +134,13 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(array) {
+function getLastReview(array){
   for (let i = 0; i < array.length; i++){
-} 
+    return `${array[7].name} gave the restaurant a ${array[7].rating} star review, and their feedback was: ${array[7].feedback}`
+   
+  }
+}
+
 
 
 
@@ -201,8 +206,7 @@ function carMaker(/* code here */) {
     
 }
 
-
-/* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
+/*  Please do not modify anything below this line  */
 function foo(){
   console.log('its working');
   return 'bar';
