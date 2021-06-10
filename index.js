@@ -50,7 +50,7 @@ export const burger = {
   category: "Lunch", 
   
   discount: function(){
-     return '${this.'
+     return 
   }
 }
 
@@ -81,7 +81,9 @@ Using the reviews array above do the following: (no function needed)
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
+reviews.name = 'Bob'; reviews.ratings = 4.5; reviews.feedback = 'love then food and place';
 
+console.log(reviews);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -91,7 +93,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
 */
 reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays"
 
-console.log(feedback);
+console.log(reviews[7].feedback);
 
 
 
@@ -107,8 +109,13 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, key, string) {
+  for (let i = 0; i < array.length; i++){
+    if(array[i][key] === string){
+
+    }
+  }
+  return array;
 }
 
 
@@ -126,8 +133,8 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  for (let i = 0; i < array.length; i++){
 } 
 
 
